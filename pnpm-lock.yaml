@@ -1,0 +1,43 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@uzzt/a':
+        specifier: workspace:*
+        version: link:packages/a
+      '@uzzt/b':
+        specifier: workspace:*
+        version: link:packages/b
+      '@uzzt/utils':
+        specifier: workspace:*
+        version: link:packages/utils
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
+
+  packages/a:
+    dependencies:
+      b:
+        specifier: link:packages\b
+        version: link:packages/b
+
+  packages/b: {}
+
+  packages/utils: {}
+
+packages:
+
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  typescript@5.6.3: {}
